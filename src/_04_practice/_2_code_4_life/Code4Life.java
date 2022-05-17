@@ -13,23 +13,32 @@ public class Code4Life {
 	 * If you cannot play sound on this computer, set canPlaySounds to false.
 	 * If you are not sure, ask your teacher 
 	 * *****************/
-	static boolean canPlaySounds = true;
+	static boolean canPlaySounds = false;
 	
+	public static void main(String[] args) {
+		
 	
 	// 1. Ask the user how many hours they spent coding this week.
-
+String hours = JOptionPane.showInputDialog("How many hours did you spend coding this week?");
+int hoursint = Integer.parseInt(hours);
 	// 2. If it is less than or equal to 2, tell them to stop watching YouTube and
 	// write code instead.
-
+if (hoursint <= 2) {
+	JOptionPane.showMessageDialog(null, "Stop watching youtube and write code instead");
+}
 	// 3. If it is greater than or equal to 3 AND less than or equal to 5, tell them
 	// they're a Code Ninja
-
+else if (hoursint >=3 && hoursint <=5){
+	JOptionPane.showMessageDialog(null, "You are a code ninja");
+}
 	// 4. If it is more than 5, call the playBatmanTheme  method, then 
 	//    call the displayBatman method.
 
+else if (hoursint >= 5) {
+	displayBatman();
+}
 
-
-	
+	}
 	private static void playBatmanTheme() {
 	// NOTE: Download batman.wav from league-sounds on GitHub: https://github.com/jointheleague/league-sounds
 	//	     Then put batman.wav into the "_2_code_4_life" project
